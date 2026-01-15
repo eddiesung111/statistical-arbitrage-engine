@@ -1,7 +1,7 @@
 # src/visualization.py
 import matplotlib.pyplot as plt
 
-def plot_diagnostic(df, title):
+def plot_diagnostic(df, title, show_graph = True):
     fig, axes = plt.subplots(3, 1, figsize=(12, 9), sharex=True)
     
     # Panel 1: Predicted Price vs True Price
@@ -58,7 +58,8 @@ def plot_diagnostic(df, title):
     file_name = f"results/{title.replace(' ', '_').lower()}.png"
     plt.savefig(file_name)
     print(f"Plot saved to {file_name}\n")
-    plt.show()
+    if show_graph:
+        plt.show()
 
 
 def plot_strategy_comparison(results_dict, title_suffix):

@@ -58,7 +58,11 @@ def run_full_analysis():
         results_train[name] = res
 
         analyze_performance(res, f"{name} train")
-        plot_diagnostic(res, f"{name} train")
+        plot_diagnostic(res, f"{name} train", show_graph = False)
+
+        # Zoom in Graph
+        plot_diagnostic(res.iloc[200:400], f"{name} snapshot")
+
 
     print("\nGenerating Comparison Plots...")
     plot_strategy_comparison(results_train, "Train")

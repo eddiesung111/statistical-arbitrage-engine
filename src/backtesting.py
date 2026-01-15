@@ -4,8 +4,7 @@ def calculate_pnl(strategy_df, transaction_cost_pct=0.0005):
     y_ret = df['price_y'].pct_change()
     x_ret = df['price_x'].pct_change()
 
-    df['strategy_return'] = df['position'].shift(1) * (y_ret - df['hedge_ratio'] * x_ret).fillna(0)
-
+    df['strategy_return'] = (df['position'].shift(1) * (y_ret - df['hedge_ratio'] * x_ret)).fillna(0)
     trades = df['position'].diff().abs().fillna(0)
     cost_drag = trades * transaction_cost_pct
     

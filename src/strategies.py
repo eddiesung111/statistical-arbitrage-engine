@@ -1,6 +1,5 @@
 # src/strategies.py
 import numpy as np
-import pandas as pd
 from statsmodels.regression.rolling import RollingOLS
 import statsmodels.api as sm    
 
