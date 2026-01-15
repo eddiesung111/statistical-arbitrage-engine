@@ -45,7 +45,7 @@ def run_full_analysis():
 
     for name, strategy in strategies.items():
         df_train = df_train_raw.copy()
-        print(f"Running {name}...")
+        print(f"\nRunning {name}...")
         
         # Fit model if required (Static OLS needs this)
         if hasattr(strategy, 'fit'):
@@ -58,10 +58,10 @@ def run_full_analysis():
         results_train[name] = res
 
         analyze_performance(res, f"{name} train")
-        plot_diagnostic(res, f"{name} train", show_graph = False)
+        plot_diagnostic(res, f"{name} train")
 
         # Zoom in Graph
-        plot_diagnostic(res.iloc[200:400], f"{name} snapshot")
+        # plot_diagnostic(res.iloc[200:400], f"{name} snapshot")
 
 
     print("\nGenerating Comparison Plots...")
@@ -75,7 +75,7 @@ def run_full_analysis():
     
     for name, strategy in strategies.items():
         df_test = df_test_raw.copy()
-        print(f"Running {name}...")
+        print(f"\nRunning {name}...")
         
         signals_test_full = strategy.calculate_signals(df_test)
         signals_test = signals_test_full.iloc[warmup_window:]
