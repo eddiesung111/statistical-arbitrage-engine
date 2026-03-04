@@ -1,5 +1,7 @@
 # src/data_loader.py
+import pandas as pd
 import yfinance as yf
+
 
 def get_classic_pair_train(ticker_y, ticker_x, start='2006-01-01', end = '2010-01-01'):
     print(f"Downloading data: {ticker_y} vs {ticker_x} ({start} to {end})...")

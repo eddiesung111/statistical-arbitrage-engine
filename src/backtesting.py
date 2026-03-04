@@ -1,4 +1,6 @@
 # src/backtesting.py
+import pandas as pd
+
 def calculate_pnl(strategy_df, transaction_cost_pct=0.0005):
     df = strategy_df.copy()
     y_ret = df['price_y'].pct_change()

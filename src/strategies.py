@@ -1,7 +1,10 @@
 # src/strategies.py
 import numpy as np
+import pandas as pd
+import statsmodels.api as sm
 from statsmodels.regression.rolling import RollingOLS
-import statsmodels.api as sm    
+
+
 
 class OLSTrader:
     def __init__(self, window=90, entry=1.0, exit=0.1):
