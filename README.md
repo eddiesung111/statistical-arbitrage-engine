@@ -29,21 +29,21 @@ The core objective was to solve the **"Non-Stationarity Problem"**—the tendenc
    ```
 3. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
    ```
 
 ## 🚀 Usage
 1. Run the Analysis
 To run the full backtest comparison (OLS vs. Rolling OLS vs. Kalman) on the default pair (EWC/EWA):
 ```Bash
-python main.py
+python3 main.py
 ```
 This will generate 8 diagnostic plots and 3 snapshots in the `results/` folder.
 
 2. Parameter Optimization
 To find the optimal Process Noise ($\delta$) and Measurement Noise ($Ve$) for the Kalman Filter:
 ```Bash
-python optimize_kalman.py
+python3 optimize_kalman.py
 ```
 
 ## 🧠 Methodology and Trading Logic
