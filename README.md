@@ -103,7 +103,7 @@ Comparing how the models track "Fair Value" and generate signals.
   
   <b>2. Rolling OLS</b></div><img src="results/rolling_ols_train.png" width="100%" alt="Rolling OLS"><b>The "Over-Reactive" Model</b>
   <small>The model adjusts, but it lacks memory. It "chases" the market, treating noise as signal. Notice how the Z-score is erratic—it adapts so quickly that it often eliminates the very mean-reversion opportunity we are trying to trade.</small> 
-  </td> <td width="33%" valign="top"> <div align="center"><b>3. Kalman Filter</b></div>
+  </td> <td width="33%" valign="top"> <div align="center">
   
   <b>3. Kalman Filter</b></div><img src="results/kalman_filter_train.png" width="100%" alt="Kalman Filter"><b>The "Balanced" Model</b>
   <small>The Kalman Filter balances <i>new data</i> against <i>prior belief</i>. The predicted price tracks the true price closely, but unlike Rolling OLS, it doesn't overreact. This results in cleaner entry signals (Blue Line crossing Green Bands).</small> 
@@ -111,6 +111,9 @@ Comparing how the models track "Fair Value" and generate signals.
   
   </tr>
 </table>
+
+#### Comparative Analysis
+<div align="center"> <img src="results/Comparison_train.png" width="80%" alt="Strategy Comparison Test"> </div>
 
 #### In-Sample Performance & Hedge Ratio Analysis
 Why did Kalman Filter outperform so significantly compared to Static OLS?
@@ -221,3 +224,4 @@ While the current Kalman Filter implementation outperforms OLS, several enhancem
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details
+
