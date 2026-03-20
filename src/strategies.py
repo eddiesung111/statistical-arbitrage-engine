@@ -4,8 +4,6 @@ import pandas as pd
 import statsmodels.api as sm
 from statsmodels.regression.rolling import RollingOLS
 
-
-
 class OLSTrader:
     def __init__(self, window=90, entry=1.0, exit=0.1):
         self.window = window
@@ -75,7 +73,6 @@ class RollingOLSTrader:
 
         return df
     
-
 class KalmanPairsTrader:
     def __init__(self, delta = 1e-5, ve = 1e-2, entry = 1.0, exit = 0.1):
         self.delta = delta

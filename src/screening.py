@@ -43,4 +43,4 @@ if __name__ == "__main__":
         print("\n--- Top Cointegrated Pairs ---")
         print(results.head())
     else:
-        print("⚠️ No cointegrated pairs found at the current p_cutoff.")
+        print("No cointegrated pairs found at the current p_cutoff.")
